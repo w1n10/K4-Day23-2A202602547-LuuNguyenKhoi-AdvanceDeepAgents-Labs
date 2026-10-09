@@ -19,6 +19,9 @@ REPORTS = ROOT / "reports"
 VALIDATOR_SOURCE = ROOT / "check_citations.py"
 FINALIZER_SOURCE = ROOT / "finalize_citations.py"   # provided: uploaded next to your validator
 RECURSION_LIMIT = 1000   # LangGraph step cap of the lead graph (~2 steps per model -> tool turn)
+MAX_REVISIONS = 2        # follow-up turns sent to the lead when the report misses a requirement
+FAMILIES = {"arxiv", "hf-daily", "hf-search", "web"}
+FIXED_SECTIONS = {"tl;dr", "background", "trends and open problems", "references"}
 
 
 def slugify(topic):
@@ -34,6 +37,34 @@ def build_prompt(topic):
             "Produce the survey report following your instructions: plan with write_todos, delegate the sub-questions "
             "to researcher subagents in parallel, build sources.json, write the report body, run the finalizer and "
             "the validator until it prints OK, and spot-check a few claims with citation-checker.")
+
+
+def review(report, sources):
+    """Deterministic check of the requirements an LLM tends to skip. Returns a list of instructions (empty = fine)."""
+    issues = []
+    families = {s.get("source") for s in sources if isinstance(s, dict)} & FAMILIES
+    if len(families) < 3:
+        missing = ", ".join(sorted(FAMILIES - families))
+        issues.append(f"The report cites only {len(families)} source families ({', '.join(sorted(families)) or 'none'}); "
+                      f"at least 3 are required. Delegate a researcher to a missing family ({missing}; if arXiv "
+                      "fails use hf_daily_papers with a short keyword over several recent dates), add its sources "
+                      "to sources.json and cite them in the body.")
+    themes = [h for h in re.findall(r"(?m)^##[ \t]+(.+?)[ \t]*$", report) if h.strip().lower() not in FIXED_SECTIONS]
+    if len(themes) < 3:
+        issues.append(f"The report has {len(themes)} thematic sections; the template requires 3 to 6 between "
+                      "Background and Trends and open problems. Split or add themes using the notes.")
+    return issues
+
+
+def _download_state(backend):
+    """(report text, sources list) currently in the sandbox; empty values when missing or broken."""
+    files = download(backend, [REPORT_PATH, SOURCES_PATH])
+    report = (files.get(REPORT_PATH) or b"").decode("utf-8", errors="replace")
+    try:
+        sources = json.loads(files.get(SOURCES_PATH) or b"[]")
+    except ValueError:
+        sources = []
+    return report, sources if isinstance(sources, list) else []
 
 
 def summarize(messages, elapsed, model_name):
@@ -98,6 +129,15 @@ def main(topic):
         try:
             result = agent.invoke({"messages": [{"role": "user", "content": build_prompt(topic)}]},
                                   config={"recursion_limit": RECURSION_LIMIT})
+            for _ in range(MAX_REVISIONS):
+                issues = review(*_download_state(backend))
+                if not issues:
+                    break
+                print("revision requested:", " | ".join(issues), file=sys.stderr)
+                followup = ("The report is not finished yet:\n- " + "\n- ".join(issues) +
+                            "\nFix this, then run the finalizer and the validator again until it prints OK.")
+                result = agent.invoke({"messages": [*result["messages"], {"role": "user", "content": followup}]},
+                                      config={"recursion_limit": RECURSION_LIMIT})
             report_path = save_outputs(backend, topic, result["messages"], time.monotonic() - start,
                                        _model_name(model))
         except Exception as exc:  # GraphRecursionError, model/API errors, missing report: a failed run

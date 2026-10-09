@@ -32,6 +32,7 @@ RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 SUMMARY_CHARS = 600
 FETCH_CHARS = 12_000
 ARXIV_MIN_INTERVAL = 3.0       # arXiv API etiquette: at least 3 s between two calls
+ARXIV_COOLDOWN = 600.0         # after arXiv kept answering 429, fail fast for this long instead of waiting again
 QUOTA_EXHAUSTED_AFTER = 600    # a Retry-After longer than this is a spent daily quota, not a burst: do not wait
 ATOM = {"a": "http://www.w3.org/2005/Atom"}
 HTTP = httpx.Client(timeout=httpx.Timeout(60.0, connect=15.0), follow_redirects=True,
@@ -47,13 +48,14 @@ class RetryableError(Exception):
 
 
 # ---- TODO 1: retry helper ----
-def with_retry(fn, *, attempts=5, base=1.0, cap=30.0, sleep=time.sleep):
+def with_retry(fn, *, attempts=5, base=1.0, cap=30.0, sleep=None):
     """Call fn(); when it raises RetryableError, wait and call it again.
 
     Waits `retry_after` seconds when the server said so, else exponential backoff base * 2**attempt plus random
     jitter; every wait is capped at `cap`. The last failure is re-raised without sleeping. Any other exception is
-    not retried. `sleep` is injectable for tests.
+    not retried. `sleep` is injectable for tests (default: time.sleep, looked up at call time).
     """
+    sleep = sleep or time.sleep
     for attempt in range(attempts):
         try:
             return fn()
@@ -101,6 +103,7 @@ def _error(exc):
 # ---- TODO 2: arXiv ----
 _arxiv_lock = threading.Lock()   # researchers run in parallel threads: serialise arXiv calls to keep the 3 s gap
 _arxiv_last_call = 0.0
+_arxiv_blocked_until = 0.0     # circuit breaker: arXiv rate-limits per IP, sometimes for a long time
 
 
 def _arxiv_get(params):
@@ -141,11 +144,18 @@ def arxiv_search(query: str, max_results: int = 10) -> str:
     terms = [t for t in terms if t.upper() not in {"AND", "OR", "ANDNOT", "ALL", "TI", "ABS"}][:8]
     if not terms:
         return "NO RESULTS"
+    global _arxiv_blocked_until
+    if time.monotonic() < _arxiv_blocked_until:
+        return ("ERROR: arXiv is rate-limiting this IP (HTTP 429); do not call arxiv_search again now, "
+                "use hf_search_papers, hf_daily_papers or web_search instead")
     params = {"search_query": " AND ".join(f"all:{t}" for t in terms), "sortBy": "submittedDate",
               "sortOrder": "descending", "start": 0, "max_results": max(1, min(int(max_results), 30))}
     try:
         response = with_retry(lambda: _arxiv_get(params), attempts=6, base=3.0, cap=60.0)
         records = _arxiv_records(response.text)
+    except RetryableError as exc:  # still rate limited / down after every retry: open the circuit breaker
+        _arxiv_blocked_until = time.monotonic() + ARXIV_COOLDOWN
+        return _error(exc)
     except Exception as exc:  # a tool never raises
         return _error(exc)
     return json.dumps(records, ensure_ascii=False) if records else "NO RESULTS"

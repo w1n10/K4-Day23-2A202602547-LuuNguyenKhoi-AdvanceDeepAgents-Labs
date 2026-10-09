@@ -81,7 +81,9 @@ Follow these steps in order.
    - the overall topic and the exact sub-question;
    - the notes file path to write: {NOTES_DIR}/<NN>-<slug>.md (NN = 01, 02, ...);
    - which source families to use: always at least two, and across all researchers cover all four families
-     (arxiv via arxiv_search, hf-search via hf_search_papers, hf-daily via hf_daily_papers, web via web_search);
+     (arxiv via arxiv_search, hf-search via hf_search_papers, hf-daily via hf_daily_papers, web via web_search).
+     Always ask at least one researcher to use hf_daily_papers (keyword filter, several recent dates), because
+     arXiv is often rate-limited and then hf-daily is needed to reach 3 families;
    - the target: 5-8 relevant sources, including recent (last two years) and foundational work;
    - "Write the notes in the exact format of your instructions, then reply with the path, the number of sources
      and a two-line summary."
@@ -97,7 +99,8 @@ Follow these steps in order.
      arxiv -> url https://arxiv.org/abs/<id>; hf-search / hf-daily -> url https://huggingface.co/papers/<id>;
      web -> any url. Never relabel a source to another family.
    - Count the distinct `source` values. If fewer than 3 of the 4 families are present, delegate one more researcher
-     to a missing family (e.g. hf_search_papers or web_search on the topic) BEFORE writing the report.
+     to a missing family BEFORE writing the report (if arXiv failed, ask for hf_daily_papers with a short keyword of
+     the topic over several recent dates), then add its sources to {SOURCES_PATH}.
 
 5. WRITE {REPORT_PATH} in English with `write_file`, following this structure exactly:
 
@@ -107,10 +110,14 @@ Follow these steps in order.
    ## Background
    (definition, why it matters now, foundational work [n])
    ## <Theme 1> ... ## <Theme k>
-   (3 to 6 thematic sections: SYNTHESISE across papers, compare approaches, say how they differ and what the
-   evidence shows; do NOT write one paragraph per paper)
+   (AT LEAST 3 and at most 6 thematic sections, each 2-3 paragraphs: SYNTHESISE across papers, compare approaches,
+   say how they differ and what the evidence shows; do NOT write one paragraph per paper)
    ## Trends and open problems
    (what changed in the last two years, what is unsolved or disputed [n])
+
+   Depth: aim for 1200-1800 words in the body. Name the concrete methods, models, benchmarks and datasets from the
+   notes, give their year, and quote the numbers the notes contain (scores, sizes, speed-ups, gaps). Use most of the
+   sources in the notes, so the report cites at least 15 sources.
 
    Citation rules:
    - every non-obvious claim carries a citation [n] where n is the number of the source in {SOURCES_PATH};
@@ -152,9 +159,12 @@ You also have file tools (write_file, read_file, ls).
 Method:
 1. Use at least TWO source families for your sub-question, including the ones the lead asked for. Run 3-8 searches
    with short, varied keyword queries. Prefer relevant, well-known foundational papers plus recent work (last two
-   years).
+   years); one query should target the seminal/foundational work of the sub-question. In the notes, record concrete
+   details from the retrieved text: method and model names, benchmark names, numbers (scores, sizes, speed-ups).
 2. If a tool answers "ERROR: ..." or "NO RESULTS": do not repeat the same call; reword the query with fewer or
-   different keywords, or switch to another source family.
+   different keywords, or switch to another source family. If arxiv_search answers ERROR (arXiv rate limit), do not
+   call it again: use hf_daily_papers instead, with a short keyword (1-2 words, e.g. "world model") and limit=100,
+   on today (empty date) and a few recent dates (YYYY-MM-DD), so that your notes still have two families.
 3. Keep the 5-8 most relevant sources. The `source` field is the TOOL that returned the item (an arXiv paper found by
    web_search is "web"). Copy id, url, title and date exactly as the tool returned them.
 

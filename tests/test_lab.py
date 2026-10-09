@@ -201,3 +201,29 @@ def test_transient_model_errors():
     wrapped = RuntimeError("wrapped")
     wrapped.__cause__ = httpx.ConnectTimeout("timeout")
     assert _transient_model_error(wrapped)
+
+
+def test_arxiv_circuit_breaker_fails_fast_after_rate_limit(monkeypatch):
+    calls = []
+
+    def limited(params):
+        calls.append(params)
+        raise RetryableError("HTTP 429")
+    monkeypatch.setattr(tools, "_arxiv_get", limited)
+    monkeypatch.setattr(tools.time, "sleep", lambda s: None)
+    monkeypatch.setattr(tools, "_arxiv_blocked_until", 0.0)
+    assert tools.arxiv_search.invoke({"query": "world model"}).startswith("ERROR")
+    tried = len(calls)
+    second = tools.arxiv_search.invoke({"query": "world model"})
+    assert second.startswith("ERROR") and "hf_daily_papers" in second and len(calls) == tried
+
+
+# ---- review (deterministic requirement check before saving) ----
+def test_review_flags_missing_families_and_themes():
+    from research import review
+    two_families = [{"source": "web"}, {"source": "hf-search"}]
+    short = "# T\n## TL;DR\n## Background\n## Theme A\n## Trends and open problems\n## References\n"
+    issues = review(short, two_families)
+    assert len(issues) == 2 and "source families" in issues[0] and "thematic" in issues[1]
+    full = short.replace("## Theme A\n", "## Theme A\n## Theme B\n## Theme C\n")
+    assert review(full, two_families + [{"source": "hf-daily"}]) == []

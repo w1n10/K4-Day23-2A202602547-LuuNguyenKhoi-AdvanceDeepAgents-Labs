@@ -1,0 +1,24 @@
+{
+  "topic": "survey about video and multimodal generation",
+  "model": "gemini-3.1-flash-lite",
+  "elapsed_s": 227.0,
+  "subagent_calls": 4,
+  "tool_calls": {
+    "write_todos": 2,
+    "task": 4,
+    "ls": 1,
+    "read_file": 3,
+    "write_file": 2,
+    "execute": 2
+  },
+  "tokens": {
+    "input": 125621,
+    "output": 3807
+  },
+  "n_sources": 14,
+  "source_families": [
+    "hf-daily",
+    "hf-search",
+    "web"
+  ]
+}

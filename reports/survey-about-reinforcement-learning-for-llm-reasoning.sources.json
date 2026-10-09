@@ -1,0 +1,154 @@
+[
+  {
+    "n": 1,
+    "id": "2510.01925v3",
+    "url": "https://arxiv.org/html/2510.01925v3",
+    "title": "Enhancing Large Language Model Reasoning with Reward Models: An Analytical Survey",
+    "date": "0000-00-00",
+    "source": "web"
+  },
+  {
+    "n": 2,
+    "id": "alphaxiv.org-o1-tutorial",
+    "url": "https://www.alphaxiv.org/abs/2502.10867",
+    "title": "A Tutorial on LLM Reasoning: Relevant Methods behind ChatGPT o1",
+    "date": "2025-02-15",
+    "source": "web"
+  },
+  {
+    "n": 3,
+    "id": "sebastianraschka.com-reasoning",
+    "url": "https://magazine.sebastianraschka.com/p/the-state-of-llm-reasoning-model-training",
+    "title": "The State of Reinforcement Learning for LLM Reasoning",
+    "date": "2025-04-19",
+    "source": "web"
+  },
+  {
+    "n": 4,
+    "id": "openai-learning-reasoning",
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "title": "Learning to reason with LLMs",
+    "date": "2024-09-12",
+    "source": "web"
+  },
+  {
+    "n": 5,
+    "id": "cuhk-sr-ttrl",
+    "url": "http://www.cse.cuhk.edu.hk/~byu/papers/C357-ICML2026-SR-TTRL.pdf",
+    "title": "Beyond Majority Voting: Self-Reflective Test-Time Reinforcement Learning for LLM Reasoning",
+    "date": "0000-00-00",
+    "source": "web"
+  },
+  {
+    "n": 6,
+    "id": "rlhfbook.com-reward-models",
+    "url": "https://rlhfbook.com/c/05-reward-models",
+    "title": "Reward Modeling | RLHF and Post-Training Book",
+    "date": "0000-00-00",
+    "source": "web"
+  },
+  {
+    "n": 7,
+    "id": "arxiv-2608.05643v1",
+    "url": "https://arxiv.org/html/2608.05643v1",
+    "title": "Test-Time Self-Correction for LLM Reasoning",
+    "date": "0000-00-00",
+    "source": "web"
+  },
+  {
+    "n": 8,
+    "id": "theneuralbase.com-rlhf-reasoning",
+    "url": "https://theneuralbase.com/rlhf-theory/learn/advanced/rlhf-for-reasoning/",
+    "title": "RLHF for Reasoning | The Neural Base",
+    "date": "0000-00-00",
+    "source": "web"
+  },
+  {
+    "n": 9,
+    "id": "2609.35433",
+    "url": "https://huggingface.co/papers/2609.35433",
+    "title": "ReSPO: Reshaped Sequence Policy Optimization for Gradient Starvation in Off-Policy Learning",
+    "date": "2026-09-28",
+    "source": "hf-daily"
+  },
+  {
+    "n": 10,
+    "id": "2609.40360",
+    "url": "https://huggingface.co/papers/2609.40360",
+    "title": "Semifactual Credit-Augmented Policy Optimization",
+    "date": "2026-09-30",
+    "source": "hf-daily"
+  },
+  {
+    "n": 11,
+    "id": "2506.08745",
+    "url": "https://huggingface.co/papers/2506.08745",
+    "title": "Consistent Paths Lead to Truth: Self-Rewarding Reinforcement Learning for LLM Reasoning",
+    "date": "2025-06-10",
+    "source": "hf-search"
+  },
+  {
+    "n": 12,
+    "id": "2610.03185",
+    "url": "https://huggingface.co/papers/2610.03185",
+    "title": "Gains and Collapse in On-Policy Distillation: A Reinforcement Learning Perspective",
+    "date": "2026-10-02",
+    "source": "hf-daily"
+  },
+  {
+    "n": 13,
+    "id": "2505.14140",
+    "url": "https://huggingface.co/papers/2505.14140",
+    "title": "RL of Thoughts: Navigating LLM Reasoning with Inference-time Reinforcement Learning",
+    "date": "2025-05-20",
+    "source": "hf-search"
+  },
+  {
+    "n": 14,
+    "id": "2512.16917",
+    "url": "https://huggingface.co/papers/2512.16917",
+    "title": "Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning",
+    "date": "2026-03-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 15,
+    "id": "2602.03979",
+    "url": "https://huggingface.co/papers/2602.03979",
+    "title": "Likelihood-Based Reward Designs for General LLM Reasoning",
+    "date": "2026-02-03",
+    "source": "hf-search"
+  },
+  {
+    "n": 16,
+    "id": "2504.20834",
+    "url": "https://huggingface.co/papers/2504.20834",
+    "title": "Reinforcement Learning for LLM Reasoning Under Memory Constraints",
+    "date": "2025-04-29",
+    "source": "hf-search"
+  },
+  {
+    "n": 17,
+    "id": "2505.21178",
+    "url": "https://huggingface.co/papers/2505.21178",
+    "title": "Walk Before You Run! Concise LLM Reasoning via Reinforcement Learning",
+    "date": "2025-05-27",
+    "source": "hf-search"
+  },
+  {
+    "n": 18,
+    "id": "2602.05281",
+    "url": "https://huggingface.co/papers/2602.05281",
+    "title": "Back to Basics: Revisiting Exploration in Reinforcement Learning for LLM Reasoning via Generative Probabilities",
+    "date": "2026-02-05",
+    "source": "hf-search"
+  },
+  {
+    "n": 19,
+    "id": "2506.14965",
+    "url": "https://huggingface.co/papers/2506.14965",
+    "title": "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective",
+    "date": "2025-06-17",
+    "source": "hf-search"
+  }
+]

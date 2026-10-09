@@ -1,0 +1,178 @@
+[
+  {
+    "n": 1,
+    "id": "aclanthology-2025-coling-652",
+    "url": "https://aclanthology.org/2025.coling-main.652.pdf",
+    "title": "A Review of Prominent Paradigms for LLM-Based Agents: Tool Use, Planning (Including RAG), and Feedback Learning",
+    "date": "2025-01-01",
+    "source": "web"
+  },
+  {
+    "n": 2,
+    "id": "springer-10.1007-s11704-025-11471-9",
+    "url": "https://link.springer.com/article/10.1007/s10462-025-11471-9",
+    "title": "From language to action: a review of large language models as autonomous agents and tool users",
+    "date": "2026-01-06",
+    "source": "web"
+  },
+  {
+    "n": 3,
+    "id": "iclr-2023-react",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "date": "2022-10-07",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "2601.19752",
+    "url": "https://huggingface.co/papers/2601.19752",
+    "title": "Agentic Design Patterns: A System-Theoretic Framework",
+    "date": "2026-01-27",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "2410.20007",
+    "url": "https://huggingface.co/papers/2410.20007",
+    "title": "Cooperative Strategic Planning Enhances Reasoning Capabilities in Large Language Models",
+    "date": "2024-10-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2610.12360",
+    "url": "https://huggingface.co/papers/2610.12360",
+    "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 7,
+    "id": "2610.06406",
+    "url": "https://huggingface.co/papers/2610.06406",
+    "title": "What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents",
+    "date": "2026-10-05",
+    "source": "hf-daily"
+  },
+  {
+    "n": 8,
+    "id": "2610.12402",
+    "url": "https://huggingface.co/papers/2610.12402",
+    "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 9,
+    "id": "2024.findings-emnlp.585",
+    "url": "https://aclanthology.org/2024.findings-emnlp.585.pdf",
+    "title": "TrustAgent: Towards Safe and Trustworthy LLM-based Agents",
+    "date": "2024-11-01",
+    "source": "web"
+  },
+  {
+    "n": 10,
+    "id": "2412.14470v1",
+    "url": "https://www.arxiv.org/pdf/2412.14470v1",
+    "title": "AGENT-SAFETYBENCH: Evaluating the Safety of LLM Agents",
+    "date": "2024-12-19",
+    "source": "web"
+  },
+  {
+    "n": 11,
+    "id": "7274ed909a312d4d869cc328ad1c5f04",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/7274ed909a312d4d869cc328ad1c5f04-Paper-Conference.pdf",
+    "title": "IDENTIFYING THE RISKS OF AGENTS WITH AN LM-EMULATED SANDBOX (ToolEmu)",
+    "date": "2024-05-07",
+    "source": "web"
+  },
+  {
+    "n": 12,
+    "id": "springer-10.1007-s11704-024-40231-1",
+    "url": "https://dl.acm.org/doi/10.1007/s11704-024-40231-1",
+    "title": "A survey on large language model based autonomous agents",
+    "date": "2024-03-22",
+    "source": "web"
+  },
+  {
+    "n": 13,
+    "id": "jair-18675",
+    "url": "https://www.jair.org/index.php/jair/article/download/18675/27253",
+    "title": "Agentic Large Language Models, a Survey",
+    "date": "2024-01-01",
+    "source": "web"
+  },
+  {
+    "n": 14,
+    "id": "nips-2023-toolformer",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "title": "Toolformer: language models can teach themselves to use tools",
+    "date": "2023-02-09",
+    "source": "arxiv"
+  },
+  {
+    "n": 15,
+    "id": "2402.02716",
+    "url": "https://huggingface.co/papers/2402.02716",
+    "title": "Understanding the planning of LLM agents: A survey",
+    "date": "2024-02-05",
+    "source": "hf-search"
+  },
+  {
+    "n": 16,
+    "id": "2511.12884",
+    "url": "https://huggingface.co/papers/2511.12884",
+    "title": "Agentic Coding Tools: An Empirical Study of Context Files",
+    "date": "2025-11-17",
+    "source": "hf-search"
+  },
+  {
+    "n": 17,
+    "id": "2610.08215",
+    "url": "https://huggingface.co/papers/2610.08215",
+    "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 18,
+    "id": "2610.12289",
+    "url": "https://huggingface.co/papers/2610.12289",
+    "title": "TestPrism: Rethinking Test Evaluation Beyond a Single Reference",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 19,
+    "id": "2410.16950",
+    "url": "https://huggingface.co/papers/2410.16950",
+    "title": "Breaking ReAct Agents: Foot-in-the-Door Attack Will Get You In",
+    "date": "2024-10-22",
+    "source": "hf-search"
+  },
+  {
+    "n": 20,
+    "id": "2411.09523",
+    "url": "https://arxiv.org/abs/2411.09523",
+    "title": "Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents",
+    "date": "2024-11-14",
+    "source": "web"
+  },
+  {
+    "n": 21,
+    "id": "10.1007-s44336-024-00009-2",
+    "url": "https://link.springer.com/article/10.1007/s44336-024-00009-2",
+    "title": "A Survey on LLM-based Multi-agent Systems",
+    "date": "2024-10-08",
+    "source": "web"
+  },
+  {
+    "n": 22,
+    "id": "2401.03428",
+    "url": "https://arxiv.org/pdf/2401.03428",
+    "title": "Intelligent Agents in Multi-Agent Systems",
+    "date": "2024-01-08",
+    "source": "web"
+  }
+]
