@@ -1,138 +1,186 @@
 [
   {
     "n": 1,
-    "id": "2409.15790v3",
-    "url": "https://arxiv.org/html/2409.15790v3",
+    "id": "arXiv:2410.20011",
+    "url": "https://arxiv.org/html/2410.20011v1",
+    "title": "A Survey of Small Language Models",
+    "date": "2024-10-25",
+    "source": "web"
+  },
+  {
+    "n": 2,
+    "id": "arXiv:2409.15790",
+    "url": "https://arxiv.org/html/2409.15790v1",
     "title": "Small Language Models: Survey, Measurements, and Insights",
     "date": "2024-09-24",
     "source": "web"
   },
   {
-    "n": 2,
-    "id": "2311.11045",
-    "url": "https://huggingface.co/papers/2311.11045",
-    "title": "Orca 2: Teaching Small Language Models How to Reason",
-    "date": "2023-11-18",
-    "source": "hf-search"
-  },
-  {
     "n": 3,
-    "id": "2404.00376",
-    "url": "https://huggingface.co/papers/2404.00376",
-    "title": "Meerkat-7B, a 7 billion parameter medical AI system",
-    "date": "2024-03-30",
-    "source": "hf-search"
-  },
-  {
-    "n": 4,
-    "id": "2411.03350",
-    "url": "http://arxiv.org/abs/2411.03350",
-    "title": "A Comprehensive Survey of Small Language Models in the Era of Large Language Models",
-    "date": "2024-12-28",
+    "id": "springer-slm-review",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-95-0629-3_22",
+    "title": "Small but Mighty: A Comparative Review of Small Language Models and Their Advantages",
+    "date": "2024-01-01",
     "source": "web"
   },
   {
+    "n": 4,
+    "id": "2410.06270",
+    "url": "https://huggingface.co/papers/2410.06270",
+    "title": "MC-MoE: Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+    "date": "2024-10-08",
+    "source": "hf-search"
+  },
+  {
     "n": 5,
-    "id": "2402.09748",
-    "url": "https://huggingface.co/papers/2402.09748",
-    "title": "Model Compression and Efficient Inference for Large Language Models: A Survey",
-    "date": "2024-02-15",
+    "id": "2204.00408",
+    "url": "https://huggingface.co/papers/2204.00408",
+    "title": "Structured Pruning Learns Compact and Accurate Models",
+    "date": "2022-04-01",
     "source": "hf-search"
   },
   {
     "n": 6,
-    "id": "2501.05465",
-    "url": "https://arxiv.org/html/2501.05465v2",
-    "title": "Small Language Models (SLMs) Can Still Pack a Punch",
-    "date": "2025-01-15",
-    "source": "web"
+    "id": "2211.07715",
+    "url": "https://huggingface.co/papers/2211.07715",
+    "title": "Fast DistilBERT on CPUs",
+    "date": "2022-10-27",
+    "source": "hf-search"
   },
   {
     "n": 7,
-    "id": "2404.14294v3",
-    "url": "https://arxiv.org/html/2404.14294v3",
-    "title": "A Survey on Efficient Inference for Large Language Models",
-    "date": "2024-04-24",
-    "source": "web"
+    "id": "2402.14992",
+    "url": "https://huggingface.co/papers/2402.14992",
+    "title": "tinyBenchmarks: evaluating LLMs with fewer examples",
+    "date": "2024-02-22",
+    "source": "hf-search"
   },
   {
     "n": 8,
-    "id": "2308.07633v4",
-    "url": "https://arxiv.org/pdf/2308.07633v4.pdf",
-    "title": "A Survey on Model Compression for Large Language Models",
-    "date": "2023-08-16",
+    "id": "ACM Computing Surveys (2026)",
+    "url": "https://dl.acm.org/doi/10.1145/3846171",
+    "title": "Towards Optimal Speculative Decoding: A Comprehensive Survey on Optimizations and Future Directions",
+    "date": "2026-09-16",
     "source": "web"
   },
   {
     "n": 9,
-    "id": "2",
-    "url": "https://doi.org/10.1145/3768165",
-    "title": "A Comprehensive Survey of Small Language Models in the Era of Large Language Models",
-    "date": "2025-11-24",
+    "id": "arXiv:2507.12000v1",
+    "url": "https://arxiv.org/html/2507.12000v1",
+    "title": "DSSD: Efficient Edge-Device Deployment and Collaborative Inference via Distributed Split Speculative Decoding",
+    "date": "2025-01-01",
     "source": "web"
   },
   {
     "n": 10,
-    "id": "1",
-    "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-are-small-language-models",
-    "title": "What Are Small Language Models (SLMs)?",
-    "date": "2025-01-01",
+    "id": "ACL Anthology 2026.eacl-long.255",
+    "url": "https://aclanthology.org/2026.eacl-long.255.pdf",
+    "title": "An Empirical Study of Speculative Decoding for Small Language Models",
+    "date": "2026-01-01",
     "source": "web"
   },
   {
     "n": 11,
-    "id": "5",
-    "url": "https://link.springer.com/chapter/10.1007/978-981-95-0629-3_22",
-    "title": "Small but Mighty: A Comparative Review of Small Language Models and Their Advantages",
-    "date": "2025-01-01",
-    "source": "web"
+    "id": "2501.08313",
+    "url": "https://huggingface.co/papers/2501.08313",
+    "title": "MiniMax-01: Scaling Foundation Models with Lightning Attention",
+    "date": "2025-01-14",
+    "source": "hf-daily"
   },
   {
     "n": 12,
-    "id": "3",
-    "url": "https://www.oracle.com/artificial-intelligence/small-language-models/",
-    "title": "What Are Small Language Models (SLMs)?",
-    "date": "2025-01-01",
-    "source": "web"
+    "id": "2412.04144",
+    "url": "https://huggingface.co/papers/2412.04144",
+    "title": "If You Can't Use Them, Recycle Them: Optimizing Merging at Scale Mitigates Performance Tradeoffs",
+    "date": "2024-12-05",
+    "source": "hf-daily"
   },
   {
     "n": 13,
-    "id": "4",
-    "url": "https://dl.acm.org/doi/10.1145/3711896.3736563",
-    "title": "A Survey on Small Language Models in the Era of Large Language Models: Architecture, Capabilities, and Trustworthiness",
-    "date": "2025-01-01",
+    "id": "ibm-slm-faq",
+    "url": "https://www.ibm.com/think/topics/small-language-models",
+    "title": "What are Small Language Models (SLM)?",
+    "date": "2024-11-05",
     "source": "web"
   },
   {
     "n": 14,
-    "id": "2407.08560",
-    "url": "https://aclanthology.org/2024.tacl-1.85.pdf",
-    "title": "A Survey of Model Compression Techniques for LLMs",
-    "date": "2024-07-01",
+    "id": "redhat-slm-llm",
+    "url": "https://www.redhat.com/en/topics/ai/llm-vs-slm",
+    "title": "SLMs vs LLMs: What are small language models?",
+    "date": "2024-01-01",
     "source": "web"
   },
   {
     "n": 15,
-    "id": "2312.14972",
-    "url": "https://arxiv.org/abs/2312.14972",
-    "title": "Scaling Down to Scale Up: A Cost-Benefit Analysis of Replacing OpenAI’s LLM with Open Source SLMs in Production",
-    "date": "2024-04-16",
-    "source": "web"
+    "id": "2406.08155",
+    "url": "https://huggingface.co/papers/2406.08155",
+    "title": "QuantMoE-Bench: Examining Post-Training Quantization for Mixture-of-Experts",
+    "date": "2024-06-12",
+    "source": "hf-search"
   },
   {
     "n": 16,
-    "id": "2402.16844",
-    "url": "https://ar5iv.labs.arxiv.org/html/2402.16844",
-    "title": "Think Big, Generate Quick: LLM-to-SLM for Fast Autoregressive Decoding",
-    "date": "2024-02-27",
-    "source": "web"
+    "id": "2504.15299",
+    "url": "https://huggingface.co/papers/2504.15299",
+    "title": "D^2MoE: Dual Routing and Dynamic Scheduling for Efficient On-Device MoE-based LLM Serving",
+    "date": "2025-04-17",
+    "source": "hf-search"
   },
   {
     "n": 17,
-    "id": "2511.06512",
-    "url": "https://huggingface.co/papers/2511.06512",
-    "title": "EASE: Practical and Efficient Safety Alignment for Small Language Models",
-    "date": "2025-11-09",
+    "id": "2412.06464",
+    "url": "https://huggingface.co/papers/2412.06464",
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "date": "2024-12-09",
+    "source": "hf-daily"
+  },
+  {
+    "n": 18,
+    "id": "2610.12327",
+    "url": "https://huggingface.co/papers/2610.12327",
+    "title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 19,
+    "id": "2505.13840",
+    "url": "https://huggingface.co/papers/2505.13840",
+    "title": "EfficientLLM: Efficiency in Large Language Models",
+    "date": "2025-05-20",
     "source": "hf-search"
+  },
+  {
+    "n": 20,
+    "id": "2407.09276",
+    "url": "https://huggingface.co/papers/2407.09276",
+    "title": "H2O-Danube3 Technical Report",
+    "date": "2024-07-12",
+    "source": "hf-search"
+  },
+  {
+    "n": 21,
+    "id": "2404.14294",
+    "url": "https://huggingface.co/papers/2404.14294",
+    "title": "A Survey on Efficient Inference for Large Language Models",
+    "date": "2024-04-22",
+    "source": "hf-search"
+  },
+  {
+    "n": 22,
+    "id": "SciOpen TST (2025)",
+    "url": "https://www.sciopen.com/local/article_pdf/10.26599/TST.2025.9010166.pdf",
+    "title": "Efficient Inference for Edge Large Language Models: A Survey",
+    "date": "2025-01-01",
+    "source": "web"
+  },
+  {
+    "n": 23,
+    "id": "neurips-2026-blog",
+    "url": "https://neurips2026-speculative-decoding.vercel.app/",
+    "title": "Speculative Decoding: How It Evolved, When It Stays Lossless, and What's Next",
+    "date": "2026-01-01",
+    "source": "web"
   }
 ]
