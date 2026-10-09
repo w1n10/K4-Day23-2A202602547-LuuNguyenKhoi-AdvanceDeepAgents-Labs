@@ -1,5 +1,23 @@
 # Deep Research Agent (Deep Agents + Sandbox)
 
+> **Bài nộp - Lưu Nguyễn Khôi (2A202602547).** Cách chạy nhanh:
+>
+> ```bash
+> python -m venv .venv && .venv/Scripts/activate        # Linux/macOS: source .venv/bin/activate
+> pip install -r requirements.txt
+> cp .env.example .env                                  # điền LAB_MODEL + khóa LLM, DAYTONA_API_KEY (hoặc SANDBOX=docker), EXA_API_KEY
+> python tools.py                                       # thử 5 công cụ nguồn dữ liệu
+> python research.py "survey about world model"         # một chủ đề -> reports/<slug>.md
+> python self_check.py                                  # kiểm tra trước khi nộp
+> pip install pytest && python -m pytest -q             # test offline: retry, slugify, validator, save_outputs
+> ```
+>
+> **Đọc `reports/`**: mỗi chủ đề có 3 tệp cùng tên `<slug>`: `<slug>.md` là báo cáo (thân + `## References` do
+> `finalize_citations.py` sinh trong sandbox), `<slug>.sources.json` là danh sách nguồn `{n, id, url, title, date, source}`
+> khớp với các `[n]` trong báo cáo, `<slug>.meta.json` ghi mô hình, thời gian, số lần giao việc cho subagent
+> (`subagent_calls`), số lần gọi từng công cụ, token của lead, số nguồn và các họ nguồn đã dùng. Kiểm tra trích dẫn của
+> một báo cáo: `python check_citations.py reports/<slug>.md reports/<slug>.sources.json`.
+
 Lab dựng một **hệ thống deep research đa tác tử**: người dùng chỉ cần nhập một chủ đề (ví dụ `survey about world model`), hệ thống tự lập kế hoạch, giao việc cho nhiều subagent, tìm tài liệu trên arXiv, Hugging Face và web, rồi viết một **báo cáo có trích dẫn**.
 
 Hình thức: **bài thực hành cá nhân**. Ngôn ngữ lập trình: Python 3.11 trở lên.
